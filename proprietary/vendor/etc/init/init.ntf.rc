@@ -1,0 +1,8 @@
+on early-boot
+    start ntf-service
+
+service ntf-service /vendor/bin/ntf-service
+    oneshot
+    disabled
+    user root
+    group root

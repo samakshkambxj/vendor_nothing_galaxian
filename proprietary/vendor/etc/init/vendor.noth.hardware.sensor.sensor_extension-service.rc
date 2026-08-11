@@ -1,0 +1,5 @@
+service vendor.sensor_extension-default /vendor/bin/hw/vendor.noth.hardware.sensor.sensor_extension-service
+    interface aidl vendor.noth.hardware.sensor.sensor_extension.ISensorExtension/default
+    class hal
+    user system
+    group system

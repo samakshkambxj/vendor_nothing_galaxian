@@ -1,0 +1,24 @@
+libOpenCL.so
+libnir_neon_driver_ndk.mtk.vndk.so
+libcmdl_ndk.mtk.vndk.so
+libarmnn_ndk.mtk.vndk.so
+libmpbase.so 64
+libarcsoft_watermark.so 64
+libportrait_repair_apu.so 64
+libapusys.so 64
+libneuron_runtime.7.so 64
+libneuron_runtime.so 64
+libapu_mdw.so 64
+libapu_mdw_batch.so 64
+libstmobile_rater.so 64
+libnoteengine.so 64
+libcamxextension_night.so 64
+libanc_scene.so 64
+libancbase-beauty.so 64
+libAncHumanBeauty.so 64
+libanc_hdr_check_nothing.so 64
+libanc_single_rt_bokeh.so 64
+libanc_dc_base.so 64
+libwa_rtdof.so 64
+libanc_objdetection.so 64
+libanc_objdetection_impl.so 64

@@ -1,0 +1,246 @@
+{
+    "FRONT_MAIN": {
+        "width": 1440,
+        "height": 1080,
+        "align_width": 1536,
+        "align_height": 1080,
+        "yuv_format": "nv12",
+        "file_ext": "YUV420NV12",
+        "camera_id":2,
+        "is_ghost_enable":true,
+
+        "drcgain":2.4,
+        "HDRCheckImpl": "HDRCHECK_IMPL_NAIVE",
+
+        "check_ratio":0.00005,
+        "check_ratio_comment":"过曝占比阈值,过曝比例大于此,进入hdr。默认为0.003f,范围[0, 1],仅对hdr检测有效",
+
+        "light_ratio": 0.96,
+        "light_ratio_comment": "过曝像素阈值(归一化),大于此认为过曝。默认为0.96f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_check_ratio": 0.03,
+        "dark_check_ratio_comment": "过暗占比阈值,暗部比例大于此,进入hdr。默认为0.03f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_ratio": 0.06,
+        "dark_ratio_comment": "过暗像素阈值(归一化),小于此认为过暗。默认为0.06f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_check_ratio": 0.99,
+        "extreme_dark_check_ratio_comment": "极暗占比阈值,极暗比例大于此,不进入hdr.默认为0.99f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_ratio": 0.01,
+        "extreme_dark_ratio_comment": "null",
+
+        "smooth_ratio": 0.9,
+        "smooth_ratio_comment": "平滑参数, 当前一次是hdr时, 下一次的阈值会乘以此值, 降低门槛, 防止hdr判断出现在某个值附近波动",
+
+        "ghost_sum_check": 52,
+        "ghost_sum_check_comment": "A throld for check if ghost scene. Value scope is [0, 255]",
+
+        "light_nv_lux_throld": 100.0,
+        "light_nv_lux_throld_comment": "LUX throld to devide LIGHT or NV, if > throld, mean LIGHT scene, otherwise mean NV scene",
+
+        "light_flicker_lux_throld": 1000.0,
+        "light_flicker_lux_throld_comment": "LUX throld to devide  use flicker protect or not",
+
+        "light_hdr_nr_throld": 0.00003,
+        "light_hdr_nr_throld_comment": "LIGHT throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "nv_hdr_nr_throld": 0.00005,
+        "nv_hdr_nr_throld_comment": "NV throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "light_n6_expo_ratio":0.45,
+        "light_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for LIGHT scene",
+
+        "light_n5_expo_ratio":0.30,
+        "light_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for LIGHT scene",
+
+        "nv_n6_expo_ratio":0.40,
+        "nv_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for NV scene",
+
+        "nv_n5_expo_ratio":0.30,
+        "nv_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for NV scene"
+    },
+    "REAR_MAIN": {
+        "width": 1440,
+        "height": 1080,
+        "align_width": 1536,
+        "align_height": 1080,
+        "yuv_format": "nv12",
+        "file_ext": "YUV420NV12",
+        "camera_id":1,
+        "is_ghost_enable":true,
+
+        "drcgain":2.4,
+        "HDRCheckImpl": "HDRCHECK_IMPL_NAIVE",
+
+        "check_ratio":0.00005,
+        "check_ratio_comment":"过曝占比阈值,过曝比例大于此,进入hdr。默认为0.003f,范围[0, 1],仅对hdr检测有效",
+
+        "light_ratio": 0.96,
+        "light_ratio_comment": "过曝像素阈值(归一化),大于此认为过曝。默认为0.96f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_check_ratio": 0.03,
+        "dark_check_ratio_comment": "过暗占比阈值，暗部比例大于此,进入hdr。默认为0.03f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_ratio": 0.06,
+        "dark_ratio_comment": "过暗像素阈值(归一化),小于此认为过暗。默认为0.06f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_check_ratio": 0.99,
+        "extreme_dark_check_ratio_comment": "极暗占比阈值,极暗比例大于此,不进入hdr。默认为0.99f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_ratio": 0.01,
+        "extreme_dark_ratio_comment": "null",
+
+        "smooth_ratio": 0.9,
+        "smooth_ratio_comment": "平滑参数, 当前一次是hdr时, 下一次的阈值会乘以此值, 降低门槛, 防止hdr判断出现在某个值附近波动",
+
+        "ghost_sum_check": 28,
+        "ghost_sum_check_comment": "A throld for check if ghost scene. Value scope is [0, 255]",
+
+        "light_nv_lux_throld": 100.0,
+        "light_nv_lux_throld_comment": "LUX throld to devide LIGHT or NV, if > throld, mean LIGHT scene, otherwise mean NV scene",
+
+        "light_flicker_lux_throld": 1000.0,
+        "light_flicker_lux_throld_comment": "LUX throld to devide  use flicker protect or not",
+
+        "light_hdr_nr_throld": 0.00003,
+        "light_hdr_nr_throld_comment": "LIGHT throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "nv_hdr_nr_throld": 0.00005,
+        "nv_hdr_nr_throld_comment": "NV throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "light_n6_expo_ratio":0.45,
+        "light_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for LIGHT scene",
+
+        "light_n5_expo_ratio":0.30,
+        "light_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for LIGHT scene",
+
+        "nv_n6_expo_ratio":0.40,
+        "nv_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for NV scene",
+
+        "nv_n5_expo_ratio":0.30,
+        "nv_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for NV scene"
+    },
+    "REAR_UW": {
+        "width": 1440,
+        "height": 1080,
+        "align_width": 1536,
+        "align_height": 1080,
+        "yuv_format": "nv12",
+        "file_ext": "YUV420NV12",
+        "camera_id":4,
+        "is_ghost_enable":false,
+
+        "drcgain":1.5,
+        "HDRCheckImpl": "HDRCHECK_IMPL_NAIVE",
+
+        "check_ratio":0.00005,
+        "check_ratio_comment":"过曝占比阈值,过曝比例大于此,进入hdr。默认为0.003f,范围[0, 1],仅对hdr检测有效",
+
+        "light_ratio": 0.99,
+        "light_ratio_comment": "过曝像素阈值(归一化),大于此认为过曝。默认为0.96f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_check_ratio": 0.03,
+        "dark_check_ratio_comment": "过暗占比阈值,暗部比例大于此,进入hdr。默认为0.03f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_ratio": 0.06,
+        "dark_ratio_comment": "过暗像素阈值(归一化),小于此认为过暗。默认为0.06f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_check_ratio": 0.99,
+        "extreme_dark_check_ratio_comment": "极暗占比阈值,极暗比例大于此,不进入hdr。默认为0.99f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_ratio": 0.01,
+        "extreme_dark_ratio_comment": "null",
+
+        "smooth_ratio": 0.9,
+        "smooth_ratio_comment": "平滑参数, 当前一次是hdr时, 下一次的阈值会乘以此值, 降低门槛, 防止hdr判断出现在某个值附近波动",
+
+        "ghost_sum_check": 28,
+        "ghost_sum_check_comment": "A throld for check if ghost scene. Value scope is [0, 255]",
+
+        "light_nv_lux_throld": 100.0,
+        "light_nv_lux_throld_comment": "LUX throld to devide LIGHT or NV, if > throld, mean LIGHT scene, otherwise mean NV scene",
+
+        "light_flicker_lux_throld": 1000.0,
+        "light_flicker_lux_throld_comment": "LUX throld to devide  use flicker protect or not",
+
+        "light_hdr_nr_throld": 0.00003,
+        "light_hdr_nr_throld_comment": "LIGHT throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "nv_hdr_nr_throld": 0.00005,
+        "nv_hdr_nr_throld_comment": "NV throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "light_n6_expo_ratio":0.45,
+        "light_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for LIGHT scene",
+
+        "light_n5_expo_ratio":0.30,
+        "light_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for LIGHT scene",
+
+        "nv_n6_expo_ratio":0.40,
+        "nv_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for NV scene",
+
+        "nv_n5_expo_ratio":0.30,
+        "nv_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for NV scene"
+    },
+    "REAR_TELE": {
+        "width": 1440,
+        "height": 1080,
+        "align_width": 1536,
+        "align_height": 1080,
+        "yuv_format": "nv12",
+        "file_ext": "YUV420NV12",
+        "camera_id":6,
+        "is_ghost_enable":true,
+
+        "drcgain":1.5,
+        "HDRCheckImpl": "HDRCHECK_IMPL_NAIVE",
+
+        "check_ratio":0.00005,
+        "check_ratio_comment":"过曝占比阈值,过曝比例大于此,进入hdr。默认为0.003f,范围[0, 1],仅对hdr检测有效",
+
+        "light_ratio": 0.96,
+        "light_ratio_comment": "过曝像素阈值(归一化),大于此认为过曝。默认为0.96f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_check_ratio": 0.03,
+        "dark_check_ratio_comment": "过暗占比阈值，暗部比例大于此,进入hdr。默认为0.03f,范围[0, 1],仅对hdr检测有效",
+
+        "dark_ratio": 0.06,
+        "dark_ratio_comment": "过暗像素阈值(归一化),小于此认为过暗。默认为0.06f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_check_ratio": 0.99,
+        "extreme_dark_check_ratio_comment": "极暗占比阈值,极暗比例大于此,不进入hdr。默认为0.99f,范围[0, 1],仅对hdr检测有效",
+
+        "extreme_dark_ratio": 0.01,
+        "extreme_dark_ratio_comment": "null",
+
+        "smooth_ratio": 0.9,
+        "smooth_ratio_comment": "平滑参数, 当前一次是hdr时, 下一次的阈值会乘以此值, 降低门槛, 防止hdr判断出现在某个值附近波动",
+
+        "ghost_sum_check": 28,
+        "ghost_sum_check_comment": "A throld for check if ghost scene. Value scope is [0, 255]",
+
+        "light_nv_lux_throld": 100.0,
+        "light_nv_lux_throld_comment": "LUX throld to devide LIGHT or NV, if > throld, mean LIGHT scene, otherwise mean NV scene",
+
+        "light_flicker_lux_throld": 1000.0,
+        "light_flicker_lux_throld_comment": "LUX throld to devide  use flicker protect or not",
+
+        "light_hdr_nr_throld": 0.00003,
+        "light_hdr_nr_throld_comment": "LIGHT throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "nv_hdr_nr_throld": 0.00005,
+        "nv_hdr_nr_throld_comment": "NV throld to enter into hdr or mfnr, if < throld, enter into MFNR, otherwise enter into HDR. Scope is[0, 1]",
+
+        "light_n6_expo_ratio":0.45,
+        "light_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for LIGHT scene",
+
+        "light_n5_expo_ratio":0.30,
+        "light_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for LIGHT scene",
+
+        "nv_n6_expo_ratio":0.40,
+        "nv_n6_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-6 frame for NV scene",
+
+        "nv_n5_expo_ratio":0.30,
+        "nv_n5_expo_ratio_comment": "ev ratio which will notify HAL preparing EV-5 frame for NV scene"
+    }
+}

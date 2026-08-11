@@ -1,0 +1,5 @@
+# TOUCH KO
+
+on init
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d \
+        /vendor/lib/modules tui-common.ko focaltech_tp.ko ft3683g.ko eph861.ko

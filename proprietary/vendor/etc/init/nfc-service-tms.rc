@@ -1,0 +1,19 @@
+#BULB-825,zhanghao,202421120,NFC,begin
+on property:ro.boot.hardware.sku=ROW
+    start  nfc_hal_service.tms.aidl
+    setprop persist.vendor.nfc_cfg.mode_name THN31FGB1A
+
+on property:ro.boot.hardware.sku=EEA
+    start  nfc_hal_service.tms.aidl
+    setprop persist.vendor.nfc_cfg.mode_name THN31FGB1A
+
+on property:ro.boot.hardware.sku=TUR
+    start  nfc_hal_service.tms.aidl
+    setprop persist.vendor.nfc_cfg.mode_name THN31FGB1A
+
+service nfc_hal_service.tms.aidl /vendor/bin/hw/android.hardware.nfc-service-tms
+    class hal
+    user nfc
+    group nfc
+    disabled
+#BULB-825,zhanghao,202421118,NFC,end

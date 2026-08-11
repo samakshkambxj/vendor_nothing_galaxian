@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<mnl_config version="21111601.6.00.00" type="gps">
+
+    <feature>IFB
+        <version>1.0</version>
+        <config>1</config>
+        <format> CH:-7 to 6 </format>
+        <setting>-9.21,-8.55,-6.82,-1.14,-1.43,-4.85,-1.41,0,-0.32,-0.02,-0.69,-0.85,-2.33,-3.43</setting>
+    </feature>
+    
+    <feature>GGTO
+        <version>1.0</version>
+        <config>1</config>
+        <format> GLONASS time offset, BEIDOU time offset, GALILEO time offset, NAVIC time offset, Unit: meter </format>
+        <setting>11.97,0.87,2.94,13.62</setting>
+    </feature>
+    
+    <feature>DCB
+        <version>1.0</version>
+        <config>1</config>
+        <format>L5_DCB_GPS,L5_DCB_QZSS,L5_DCB_CNSS,L5_DCB_GALILEO</format>
+        <setting>-8.16,-8.34,-10.82,-9.17</setting>
+        <format>L1C_DCB_GPS,L1C_DCB_QZSS,B1C_DCB_CNSS</format>
+        <setting>0,0,0</setting>
+        <format>Chip</format>
+        <setting>6637</setting>
+        <format>L5_DCB_GPS,L5_DCB_QZSS,L5_DCB_CNSS,L5_DCB_GALILEO</format>
+        <setting>-6.99,-7.14,-8.24,-7.95</setting>
+        <format>L1C_DCB_GPS,L1C_DCB_QZSS,B1C_DCB_CNSS</format>
+        <setting>0,0,0</setting>
+        <format>Chip</format>
+        <setting>6686</setting>
+    </feature>
+
+    <!-- 2024-02-19 for BEE-115 GPS L1 config enable by liuyu begin -->
+    <feature>L1Only
+        <version>1.0</version>
+        <config>1</config>
+        <format>L1 only: 1</format>
+        <setting>1</setting>
+    </feature>
+    <!-- 2024-02-19 for BEE-115 GPS L1 config enable by liuyu end -->
+
+    <feature>L5Test
+        <version>1.0</version>
+        <config>0</config>
+        <format>Search and used GPS L5 satellites according to the healthy status: 0, Search and used GPS L5 satellites regardless of its healthy status: 1</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>DisableSignal
+        <version>1.0</version>
+        <config>1</config>
+        <format>(Bitmask)Disable B1C:bit0, GPS_L1C:bit1, QZSS_L1C:bit2, E5B:bit3, B2B:bit4</format>
+        <setting>0</setting>
+    </feature>
+
+    <feature>GLP
+        <version>2.0</version>
+        <config>1</config>
+        <format>Enable</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>CAIC
+        <version>1.0</version>
+        <config>0</config>
+        <format>L1 CAIC FrequencyHz</format>
+        <setting>1560000000</setting>
+        <format>L5 CAIC FrequencyHz</format>
+        <setting>1170000000</setting>
+    </feature>
+
+    <!-- 2024-02-19 for BEE-115 GPS satillet config enable by liuyu begin -->
+    <feature>GnssMode
+        <version>1.0</version>
+        <config>1</config>
+        <format>GP+GL+BD:2, GP:3, BD:4, GP+GL+GA+BD:6, GP+GL+GA:8, GP+GL+GA+BD+NI:10, BD+GL+GA+NI:11</format>
+        <setting>6</setting>
+    </feature>
+    <!-- 2024-02-19 for BEE-115 GPS satillet config enable by liuyu end -->
+
+    <feature>Bluesky
+        <version>1.0</version>
+        <config>1</config>
+        <format>disable:0, problos+position aiding:1, ebearing:2, driving:3</format>
+        <setting>3</setting>
+    </feature>
+
+    <feature>CoTMS
+        <version>5.0</version>
+        <config>1</config>
+        <format>RTS,TEP</format>
+        <setting>3,4,1</setting>
+    </feature>
+
+    <feature>SwitchTIA
+        <version>1</version>
+        <config>1</config>
+        <format>enable:1,disable:0</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>Blanking
+        <version>1</version>
+        <config>0</config>
+        <format>enable:1,disable:0</format>
+        <setting>0</setting>
+    </feature>
+
+    <feature>MDTime
+        <version>2.0</version>
+        <config>1</config>
+        <format>featureOption,requestInterval,sizeOfWindow,syncBackNum(optional)</format>
+        <setting>1,5000,1500,0</setting>
+    </feature>
+    
+    <feature>Time_Source
+        <version>1.0</version>
+        <config>1</config>
+        <format>RAT,SIB</format>
+       <setting>50,6</setting>
+    </feature>
+   
+    <feature>PSO
+        <version>1.0</version>
+        <config>0</config>
+        <format>Disable:0, Enable:1</format>
+        <setting>1</setting>
+    </feature>
+
+    <feature>GNSSPower
+        <version>1.0</version>
+        <config>1</config>
+        <format>singlebandTracking,multibandTracking,singlebandAcquisition,multibandAcquisition</format>
+        <setting>51.9,100.2,58.5,106.7</setting>
+    </feature>
+
+    <feature>OSNMA
+        <version>1.0</version>
+        <config>1</config>
+        <format>Disable:-1, Enable OSNMA when NMAS is test or operational phase: 1, Enable OSNMA when NMAS is operational phase: 2</format>
+        <setting>1</setting>
+    </feature>
+
+    <!-- liuyu@location,disable GPS L5 capability BEE-1077 @{ -->
+    <feature>SignalConfig
+        <version>1.0</version>
+        <config>1</config>
+        <format>L5Disable</format>
+        <setting>128</setting>
+    </feature>
+    <!-- @} -->
+
+</mnl_config>

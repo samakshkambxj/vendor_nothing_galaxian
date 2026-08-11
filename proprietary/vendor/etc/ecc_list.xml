@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<EccTable>
+    <!--
+        Configure emergency numbers for open market load. For the emergey numbers defined in
+        3GPP TS 22.101 (112/911 when SIM/USIM present and 112/911/000/08/110/118/119/999
+        when SIM/USIM not present) it will be configure in default emergency number source,
+        so no need to configure here if there is no special request for these numbers.
+
+        The attribute definition for tag EccEntry:
+        - Ecc: the emergnecy number
+        - Category: the service category (From 3GPP TS24.008)
+            - Bit 1 (1): Police
+            - Bit 2 (2): Ambulance
+            - Bit 3 (4): Fire Brigade
+            - Bit 4 (8): Marine Guard
+            - Bit 5 (16): Mountain Rescue
+            - Bit 6 (32): Manually initiated eCall
+            - Bit 7 (64): Automatically initiated eCall
+            - Bit 8 (128): is spare and set to "0"
+        - Condition: there are following values:
+            - 0: ecc only when no sim
+            - 1: ecc always
+            - 2: MMI will show ecc but send to nw as normal call
+        - Plmn: Operator PLMN which contains MCC+MNC.
+                Use FFF or FF for all operators under same country
+                Ex: 460 FFF means all operators in China
+    -->
+    <!--BEE-1544 lihui add for GCF test begin -->
+    <EccEntry Ecc="120" Category="0" Condition="2" Plmn="001 01"/>
+    <!--BEE-1544 lihui add for GCF test end -->
+
+    <!-- Add for France operator -->
+    <EccEntry Ecc="114" Category="0" Condition="2" Plmn="208 FFF"/>
+
+    <!-- Add for O2/UK operator -->
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="234 10"/>
+
+    <!-- Add for Vodafone/Ireland operators -->
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="272 01"/>
+
+    <!-- Add for Myanmar due to AOSP eccdata will treat it as ecc -->
+    <EccEntry Ecc="191" Category="0" Condition="2" Plmn="414 FFF"/>
+    <EccEntry Ecc="192" Category="0" Condition="2" Plmn="414 FFF"/>
+    <EccEntry Ecc="199" Category="0" Condition="2" Plmn="414 FFF"/>
+
+    <!-- Add for Iran  -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="432 FFF"/>
+    <EccEntry Ecc="115" Category="2" Condition="1" Plmn="432 FFF"/>
+    <EccEntry Ecc="125" Category="4" Condition="1" Plmn="432 FFF"/>
+
+    <!-- Add for Japan operator due to AOSP don't set correct category -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="440 FFF"/>
+    <EccEntry Ecc="118" Category="8" Condition="1" Plmn="440 FFF"/>
+    <EccEntry Ecc="119" Category="6" Condition="1" Plmn="440 FFF"/>
+
+    <!-- Add for Korea operator -->
+    <EccEntry Ecc="111" Category="6" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="113" Category="3" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="117" Category="18" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="118" Category="19" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="125" Category="9" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="112" Category="1" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="911" Category="4" Condition="1" Plmn="450 FFF"/>
+    <EccEntry Ecc="122" Category="8" Condition="1" Plmn="450 FFF"/>
+
+    <!-- Add for Vietnam due to AOSP eccdata will treat it as ecc -->
+    <EccEntry Ecc="113" Category="0" Condition="2" Plmn="452 FFF"/>
+    <EccEntry Ecc="114" Category="0" Condition="2" Plmn="452 FFF"/>
+    <EccEntry Ecc="115" Category="0" Condition="2" Plmn="452 FFF"/>
+
+    <!-- Add 999 for HongKong -->
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="454 FFF"/>
+
+    <!-- Add for Cambodia/Seatel -->
+    <EccEntry Ecc="117" Category="0" Condition="2" Plmn="456 11"/>
+    <EccEntry Ecc="118" Category="0" Condition="2" Plmn="456 11"/>
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn="456 11"/>
+
+    <!-- Add for CT 2/3G network -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="120" Category="2" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="122" Category="8" Condition="1" Plmn="460 03"/>
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="460 03"/>
+
+    <!-- China CTA emergency numbers for GSM operators -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn="460 FFF"/>
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn="460 FFF"/>
+    <EccEntry Ecc="120" Category="0" Condition="2" Plmn="460 FFF"/>
+    <EccEntry Ecc="122" Category="0" Condition="2" Plmn="460 FFF"/>
+    <!-- Support dial 999 under G+N/A case because CT network don't support
+         dial 999 without no CT SIM
+    -->
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn="460 FFF"/>
+
+    <!-- AERO-3493, add 118 for taiwan operator for ecc number begin-->
+    <!-- Add for Taiwan FET operator (466 01) -->
+    <EccEntry Ecc="110" Category="1" Condition="2" Plmn="466 01"/>
+    <EccEntry Ecc="112" Category="2" Condition="1" Plmn="466 01"/>
+    <EccEntry Ecc="119" Category="4" Condition="2" Plmn="466 01"/>
+    <EccEntry Ecc="911" Category="2" Condition="1" Plmn="466 01"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 01"/>
+
+    <!-- Add for Taiwan APTG operator (466 05) -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="466 05"/>
+    <EccEntry Ecc="112" Category="4" Condition="1" Plmn="466 05"/>
+    <EccEntry Ecc="119" Category="2" Condition="1" Plmn="466 05"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 05"/>
+
+    <!-- Add for Taiwan T star operator (466 89) -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn="466 89"/>
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn="466 89"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 89"/>
+
+    <!-- Add for Taiwan CHT operator (466 92) -->
+    <EccEntry Ecc="110" Category="0" Condition="2" Plmn="466 92"/>
+    <EccEntry Ecc="119" Category="0" Condition="2" Plmn="466 92"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 92"/>
+
+    <!-- Add for Taiwan TWM operator (466 93/97/99) -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="466 93"/>
+    <EccEntry Ecc="112" Category="2" Condition="1" Plmn="466 93"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="466 93"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 93"/>
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="466 97"/>
+    <EccEntry Ecc="112" Category="2" Condition="1" Plmn="466 97"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="466 97"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 97"/>
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="466 99"/>
+    <EccEntry Ecc="112" Category="2" Condition="1" Plmn="466 99"/>
+    <EccEntry Ecc="119" Category="4" Condition="1" Plmn="466 99"/>
+    <EccEntry Ecc="118" Category="8" Condition="2" Plmn="466 99"/>
+    <!-- AERO-3493, add 118 for taiwan operator for ecc number end-->
+
+    <!-- Add for Malaysis Digi operator -->
+    <EccEntry Ecc="999" Category="0" Condition="1" Plmn="502 FFF"/>
+
+    <!-- Fix NO SIM ECC call end delay issue -->
+    <EccEntry Ecc="000" Category="31" Condition="1" Plmn="505 01"/>
+    <!-- Add for All Australia operators -->
+    <EccEntry Ecc="000" Category="0" Condition="1" Plmn="505 FFF"/>
+
+    <!-- Add for Thailand TrueMove operator (520 00/04) -->
+    <EccEntry Ecc="112" Category="1" Condition="1" Plmn="520 00"/>
+    <EccEntry Ecc="191" Category="1" Condition="1" Plmn="520 00"/>
+    <EccEntry Ecc="911" Category="1" Condition="1" Plmn="520 00"/>
+    <EccEntry Ecc="199" Category="4" Condition="1" Plmn="520 00"/>
+    <EccEntry Ecc="1669" Category="2" Condition="1" Plmn="520 00"/>
+    <EccEntry Ecc="112" Category="1" Condition="1" Plmn="520 04"/>
+    <EccEntry Ecc="191" Category="1" Condition="1" Plmn="520 04"/>
+    <EccEntry Ecc="911" Category="1" Condition="1" Plmn="520 04"/>
+    <EccEntry Ecc="199" Category="4" Condition="1" Plmn="520 04"/>
+    <EccEntry Ecc="1669" Category="2" Condition="1" Plmn="520 04"/>
+
+    <!-- Add for Thailand DTAC due to AOSP eccdata will treat it as ecc -->
+    <EccEntry Ecc="191" Category="0" Condition="2" Plmn="520 05"/>
+    <EccEntry Ecc="191" Category="0" Condition="2" Plmn="520 18"/>
+    <EccEntry Ecc="191" Category="0" Condition="2" Plmn="520 47"/>
+
+    <!-- Add for Claro/Colombia operator -->
+    <EccEntry Ecc="123" Category="0" Condition="2" Plmn="732 101"/>
+    <EccEntry Ecc="112" Category="1" Condition="1" Plmn="732 101"/>
+
+    <!-- Add for Avantel/Colombia operator -->
+    <EccEntry Ecc="123" Category="0" Condition="1" Plmn="732 130"/>
+    <EccEntry Ecc="123" Category="0" Condition="1" Plmn="732 360"/>
+    
+    <!-- BEE-4799 wangke Add for 00101 sim -->
+    <EccEntry Ecc="110" Category="1" Condition="1" Plmn="001 01"/>
+
+    <!--yinzhiliang add to fix AERO-2589-->
+    <!-- Add for India  operator -->
+    <EccEntry Ecc="100" Category="0" Condition="2" Plmn="404 FFF"/>
+    <EccEntry Ecc="100" Category="0" Condition="2" Plmn="405 FFF"/>
+    <EccEntry Ecc="100" Category="0" Condition="2" Plmn="406 FFF"/>
+    <EccEntry Ecc="101" Category="0" Condition="2" Plmn="404 FFF"/>
+    <EccEntry Ecc="101" Category="0" Condition="2" Plmn="405 FFF"/>
+    <EccEntry Ecc="101" Category="0" Condition="2" Plmn="406 FFF"/>
+    <EccEntry Ecc="102" Category="0" Condition="2" Plmn="404 FFF"/>
+    <EccEntry Ecc="102" Category="0" Condition="2" Plmn="405 FFF"/>
+    <EccEntry Ecc="102" Category="0" Condition="2" Plmn="406 FFF"/>
+
+    <!-- BEE-4334, add 100/166/199 for ecc number in Greece begin-->
+    <EccEntry Ecc="100" Category="0" Condition="0" Plmn="202 FFF"/>
+    <EccEntry Ecc="166" Category="0" Condition="0" Plmn="202 FFF"/>
+    <EccEntry Ecc="199" Category="0" Condition="0" Plmn="202 FFF"/>
+    <!-- BEE-4334, add 100/166/199 for ecc number in Greece End-->
+
+    <!-- BULB-4255 wangke Add for Saudi Arabia begin -->
+    <EccEntry Ecc="996" Category="0" Condition="2" Plmn="420 03"/>
+    <!-- BULB-4255 wangke Add for Saudi Arabia end -->
+
+    <!-- AERO15V-3248, add for SaudiArabia Zain begin-->
+    <EccEntry Ecc="994" Category="0" Condition="2" Plmn = "420 04" />
+    <EccEntry Ecc="996" Category="0" Condition="2" Plmn = "420 04" />
+    <EccEntry Ecc="997" Category="0" Condition="2" Plmn = "420 04" />
+    <EccEntry Ecc="998" Category="0" Condition="2" Plmn = "420 04" />
+    <EccEntry Ecc="999" Category="0" Condition="2" Plmn = "420 04" />
+    <!-- AERO15V-3248, add for SaudiArabia Zain End-->
+
+    <!-- BULB-7638, add for Egypt ECC begin-->
+    <EccEntry Ecc="123" Category="2" Condition="2" Plmn="602 FFF"/>
+    <EccEntry Ecc="180" Category="4" Condition="2" Plmn="602 FFF"/>
+    <!-- BULB-7638, add for Egypt ECC end-->
+
+</EccTable>

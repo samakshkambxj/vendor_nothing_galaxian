@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AudioLogSettings>
+	<Category name="Press the button with note &#34;press first&#34; first, than press others button.">
+		<Group name="" ui_type="default">
+		</Group>
+	</Category>
+	<Category name="">
+		<Actions name="AudioPolicy
+					  (Press First)" ui_type="button">
+			<Action cmd_id="fw_ap_1_log" value="V"/>
+			<Action cmd_id="fw_ap_2_log" value="4"/>
+			<Action cmd_id="audioserver_restart" value="0"/>
+			<Action cmd_id="audioserver_restart" value="1"/>
+		</Actions>
+		<Actions name="AudioTrack
+					   (Press First)" ui_type="button">
+			<Action cmd_id="fw_at_log" value="4"/>
+			<Action cmd_id="audioserver_restart" value="0"/>
+			<Action cmd_id="audioserver_restart" value="1"/>
+		</Actions>
+		<Actions name="AudioFlinger
+					  (Press First)" ui_type="button">
+			<Action cmd_id="fw_af_log" value="4"/>
+			<Action cmd_id="audioserver_restart" value="0"/>
+			<Action cmd_id="audioserver_restart" value="1"/>
+		</Actions>
+		<Actions name="DL" ui_type="button">
+			<Action cmd_id="hal_dl_log" value="1"/>
+			<Action cmd_id="adsp_dl_log_on" value="1"/>
+		</Actions>
+		<Actions name="UL" ui_type="button">
+			<Action cmd_id="hal_ul_log" value="1"/>
+			<Action cmd_id="adsp_ul_log_on" value="1"/>
+		</Actions>
+		<Actions name="Aurisys" ui_type="button">
+			<Action cmd_id="aurisys_ap_log_on" value="1"/>
+			<Action cmd_id="aurisys_adsp_log_on" value="1"/>
+		</Actions>
+		<Actions name="MD Call" ui_type="button">
+			<Action cmd_id="md_log_on" value="1"/>
+		</Actions>
+		<Actions name="UltraSound
+					  (Press First)" ui_type="button">
+			<Action cmd_id="ultra_log" value="3"/>
+			<Action cmd_id="audioserver_restart" value="0"/>
+			<Action cmd_id="audioserver_restart" value="1"/>
+		</Actions>
+		<Actions name="Enable All Log (press Restart Audioserver than press again)" ui_type="button">
+			<Action cmd_id="fw_ap_1_log" value="V"/>
+			<Action cmd_id="fw_ap_2_log" value="4"/>
+			<Action cmd_id="fw_at_log" value="4"/>
+			<Action cmd_id="fw_af_log" value="4"/>
+			<Action cmd_id="hal_dl_log" value="1"/>
+			<Action cmd_id="hal_ul_log" value="1"/>
+			<Action cmd_id="adsp_dl_log_on" value="1"/>
+			<Action cmd_id="adsp_ul_log_on" value="1"/>
+			<Action cmd_id="aurisys_ap_log_on" value="1"/>
+			<Action cmd_id="aurisys_adsp_log_on" value="1"/>
+			<Action cmd_id="md_log_on" value="1"/>
+			<Action cmd_id="ultra_log" value="3"/>
+			<Action cmd_id="hint" value="1"/>
+		</Actions>
+		<Group name="" ui_type="default">
+			<Command id="" name="Disable All Log" ui_type="button" button_action="restore" cmd_type="restore"/>
+		</Group>
+	</Category>
+	<Category name="Functional CMD">
+		<Group name="" ui_type="default">
+			<Actions name="Restart Audioserver" ui_type="button">
+				<Action cmd_id="audioserver_restart" value="0"/>
+				<Action cmd_id="audioserver_restart" value="1"/>
+			</Actions>
+		</Group>
+	</Category>
+	<Category name="Current Log Setting">
+		<Group name="" ui_type="default">
+			<!--FW Log-->
+			<Command id="fw_ap_1_log" name="APM" ui_type="list" entries="I,D,V" cmd_type="set_property" property="log.tag.APM_AudioPolicyManager" default="D"/>
+			<Command id="fw_ap_2_log" name="APM Debug" ui_type="list" entries="0,1,2,3,4" cmd_type="set_property" property="vendor.af.policy.debug" default="0"/>
+			<Command id="fw_at_log" name="AT" ui_type="list" entries="0,1,2,3,4,5" cmd_type="set_property" property="vendor.af.track.log" default="0"/>
+			<Command id="fw_af_log" name="AF" ui_type="list" entries="0,1,2,3,4" cmd_type="set_property" property="vendor.af.audioflinger.log" default="0"/>
+			<!--HAL Log-->
+			<Command id="hal_dl_log" name="HAL DL" ui_type="list" entries="0,1,2,4,8,16,32" cmd_type="set_property" property="vendor.streamout.log" default="0"/>
+			<Command id="hal_ul_log" name="HAL UL" ui_type="list" entries="0,1,2,4,8,16,32" cmd_type="set_property" property="vendor.streamin.log" default="0"/>
+			<Command id="adsp_dl_log_on" name="ADSP DL" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,8,4" cmd_type="adb shell"/>
+			<Command id="adsp_ul_log_on" name="ADSP UL" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,3,4" cmd_type="adb shell"/>
+			<Command id="adsp_dl_log_off" name="ADSP DL off" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,8,0" cmd_type="adb shell"/>
+			<Command id="adsp_ul_log_off" name="ADSP UL off" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,3,0" cmd_type="adb shell"/>
+			<Command id="aurisys_ap_log_on" name="Aurisys AP" ui_type="hidden" button_action="adb shell AudioSetParam AURISYS_SET_PARAM,HAL,ALL,LIB_ALL,ENABLE_LOG,1=SET" cmd_type="adb shell"/>
+			<Command id="aurisys_adsp_log_on" name="Aurisys ADSP" ui_type="hidden" button_action="adb shell AudioSetParam AURISYS_SET_PARAM,DSP,ALL,LIB_ALL,ENABLE_LOG,1=SET" cmd_type="adb shell"/>
+			<Command id="aurisys_ap_log_off" name="Aurisys AP off" ui_type="hidden" button_action="adb shell AudioSetParam AURISYS_SET_PARAM,HAL,ALL,LIB_ALL,ENABLE_LOG,0=SET" cmd_type="adb shell"/>
+			<Command id="aurisys_adsp_log_off" name="Aurisys ADSP off" ui_type="hidden" button_action="adb shell AudioSetParam AURISYS_SET_PARAM,DSP,ALL,LIB_ALL,ENABLE_LOG,0=SET" cmd_type="adb shell"/>
+			<!--Others Log-->
+			<Command id="md_log_on" name="MD Call" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,0,4" cmd_type="adb shell"/>
+			<Command id="md_log_off" name="MD Call off" ui_type="hidden" button_action="adb shell AudioSetParam DSPPARAM=DEBUGFLAG,0,0" cmd_type="adb shell"/>
+			<Command id="ultra_log" name="UltraSound" ui_type="list" entries="0,3" cmd_type="set_property" property="vendor.audio.ultrasound.log" default="0"/>
+			<!--Reset Command-->
+			<Command id="" name="" ui_type="hidden" cmd_type="set_property" property="vendor.af.audioserver.restart" default="0"/>
+			<Command id="audioserver_restart" name="" ui_type="hidden" cmd_type="set_property" property="vendor.af.audioserver.restart" default="1"/>
+		</Group>
+	</Category>
+</AudioLogSettings>
