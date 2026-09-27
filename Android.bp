@@ -6249,63 +6249,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "librcs_interface",
-    owner: "nothing",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/librcs_interface.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "liblog",
-                "libhardware",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "librcs_volte_core",
-    owner: "nothing",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/librcs_volte_core.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "libhardware",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libremosaic_wrapper",
     owner: "nothing",
     strip: {
@@ -20599,6 +20542,38 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "mtk_lbs_service-impl",
+    owner: "nothing",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/mtk_lbs_service-impl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libhardware",
+                "libbinder",
+                "libbinder_ndk",
+                "libutils",
+                "vendor.mediatek.hardware.lbs-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "nfc_nci.thn31nfc.tms",
     owner: "nothing",
     strip: {
@@ -21178,31 +21153,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.clientapi-V1-ndk",
-    owner: "nothing",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.clientapi-V1-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.composer_ext-V1-ndk",
     owner: "nothing",
     strip: {
@@ -21291,6 +21241,31 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/vendor/lib64/vendor.mediatek.hardware.gnss.batching-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.mediatek.hardware.lbs-V1-ndk",
+    owner: "nothing",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/vendor.mediatek.hardware.lbs-V1-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -22147,59 +22122,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.rcs-V1-ndk",
-    owner: "nothing",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.rcs-V1-ndk.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "vendor.mediatek.hardware.rcs@2.0",
-    owner: "nothing",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so",
-            ],
-            shared_libs: [
-                "libhidlbase",
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "vendor.mediatek.hardware.videotelephony-V1-ndk-vendor",
     stem: "vendor.mediatek.hardware.videotelephony-V1-ndk",
     owner: "nothing",
@@ -22651,7 +22573,7 @@ cc_prebuilt_library_shared {
                 "proprietary/system_ext/lib64/libsink-mtk.so",
             ],
             shared_libs: [
-                "libaudiotrack_shim",
+                "libaudioclient_shim",
                 "libbinder",
                 "libcutils",
                 "libgui",
@@ -22949,32 +22871,12 @@ dex_import {
 }
 
 dex_import {
-    name: "mediatek-ims-common",
-    owner: "nothing",
-    jars: [
-        "proprietary/system_ext/framework/mediatek-ims-common.jar",
-    ],
-    system_ext_specific: true,
-    use_generic_config: true,
-}
-
-dex_import {
     name: "mediatek-ims-extension-plugin",
     owner: "nothing",
     jars: [
         "proprietary/system_ext/framework/mediatek-ims-extension-plugin.jar",
     ],
     system_ext_specific: true,
-}
-
-dex_import {
-    name: "mediatek-telecom-common",
-    owner: "nothing",
-    jars: [
-        "proprietary/system_ext/framework/mediatek-telecom-common.jar",
-    ],
-    system_ext_specific: true,
-    use_generic_config: true,
 }
 
 dex_import {
@@ -23150,6 +23052,15 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
+    name: "mtk_lbs_service.xml",
+    owner: "nothing",
+    src: "proprietary/vendor/etc/vintf/manifest/mtk_lbs_service.xml",
+    filename_from_src: true,
+    sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+prebuilt_etc_xml {
     name: "mtkgnss-batching.xml",
     owner: "nothing",
     src: "proprietary/vendor/etc/vintf/manifest/mtkgnss-batching.xml",
@@ -23173,6 +23084,32 @@ prebuilt_etc_xml {
     src: "proprietary/vendor/etc/vintf/manifest/vendor.nothing.hardware.biometrics.fingerprint-service.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "bip_ap",
+    owner: "nothing",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/bip_ap",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
     soc_specific: true,
 }
 
@@ -24160,6 +24097,39 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "mtk_lbs_service",
+    owner: "nothing",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/mtk_lbs_service",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libbase",
+                "libhardware",
+                "libbinder",
+                "libutils",
+                "libbinder_ndk",
+                "vendor.mediatek.hardware.lbs-V1-ndk",
+                "mtk_lbs_service-impl",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "muxreport",
     owner: "nothing",
     target: {
@@ -24243,37 +24213,6 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "rcs_volte_stack",
-    owner: "nothing",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/rcs_volte_stack",
-            ],
-            shared_libs: [
-                "libcutils",
-                "liblog",
-                "librcs_volte_core",
-                "libcrypto",
-                "libnetutils",
-                "libhardware",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
     name: "thermal_core",
     owner: "nothing",
     target: {
@@ -24288,79 +24227,6 @@ cc_prebuilt_binary {
                 "libifcutils_mtk",
                 "libmipc",
                 "libmtkproperty",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "volte_clientapi_ua",
-    owner: "nothing",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/volte_clientapi_ua",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libfmq",
-                "liblog",
-                "libutils",
-                "libhwbinder",
-                "libhardware",
-                "libbinder_ndk",
-                "vendor.mediatek.hardware.clientapi-V1-ndk",
-                "libhardware_legacy",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "volte_rcs_ua",
-    owner: "nothing",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/volte_rcs_ua",
-            ],
-            shared_libs: [
-                "libbase",
-                "libcutils",
-                "libfmq",
-                "liblog",
-                "libutils",
-                "libhardware",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "vendor.mediatek.hardware.rcs@2.0",
-                "libbinder_ndk",
-                "vendor.mediatek.hardware.rcs-V1-ndk",
-                "libhardware_legacy",
-                "libcrypto",
-                "libnetutils",
                 "libc++",
                 "libc",
                 "libm",
